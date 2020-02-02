@@ -26,7 +26,7 @@ void selection_sort(int *array, size_t size)
 	 * 4. if the next element is smaller, then it's the new least
 	 * 5. if the elements aren't equal, swap them
 	 */
-	if ((array != NULL) && (size > 2))
+	if ((array != NULL) && (size >= 2))
 	{
 		for (elmt1 = 0; elmt1 < (size - 1); elmt1++)
 		{

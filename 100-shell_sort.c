@@ -22,7 +22,7 @@ void shell_sort(int *array, size_t size)
 	 * 2. Swap within each interval created by the gaps
 	 * 3. Recalculate gap to decrease the intervals
 	 */
-	if (size > 2)
+	if (size >= 2)
 	{
 		while (gap < (size / 3))
 		{
