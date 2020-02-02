@@ -8,30 +8,54 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = NULL;
-	listint_t *temp = NULL;
-//	listint_t *head = NULL;
+	listint_t *current;
+	listint_t *temp;
 
 	if ((*list != NULL) && ((*list)->next != NULL))
 	{
 		current = (*list)->next;
-		while (current->next)
+		while (current)
 		{
-			if ((current->n) < (current->prev->n))
+			temp = current->prev;
+			while ((temp != NULL) && ((current->n) < (temp->n)))
 			{
+				helper_swap(current, temp);
 				temp = current->prev;
-				current->next->prev = temp;
-				temp->next = current->next;
-				if (temp->prev)
+				if (current->prev == NULL)
 				{
-					temp->prev->next = current;
+					*list = current;
 				}
-				current->next = temp;
-				current->prev = temp->prev;
-				temp->prev = current;
 				print_list(*list);
 			}
 			current = current->next;
 		}
 	}
+}
+
+/**
+ * helper_swap - function that swaps nodes of a list
+ * @current: pointer to the right node for comparison
+ * @temp: pointer to the left node for comparison
+ * Description: Helper function to swap nodes of a list
+ * Return: nothing
+ */
+void helper_swap(listint_t *current, listint_t *temp)
+{
+	listint_t *right;
+	listint_t *left;
+
+	right = current->next;
+	left = temp->prev;
+	if (right)	
+	{
+		right->prev = temp;
+	}
+	temp->next = right;
+	if (left)
+	{
+		left->next = current;
+	}
+	current->next = temp;
+	current->prev = left;
+	temp->prev = current;
 }
