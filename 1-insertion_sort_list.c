@@ -46,7 +46,7 @@ void helper_swap(listint_t *current, listint_t *temp)
 
 	right = current->next;
 	left = temp->prev;
-	if (right)	
+	if (right)
 	{
 		right->prev = temp;
 	}
