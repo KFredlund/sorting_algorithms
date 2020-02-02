@@ -26,7 +26,7 @@ void bubble_sort(int *array, size_t size)
      * 4. if element is greater than the adjacent, then swap
      * 5. last iteration checks the sorted order
      */
-	if (size > 2)
+	if ((array != NULL) && (size > 2))
 	{
 		for (i = 0; i < size - 1; i++)
 		{
