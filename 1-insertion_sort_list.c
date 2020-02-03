@@ -36,7 +36,6 @@ void insertion_sort_list(listint_t **list)
  * helper_swap - function that swaps nodes of a list
  * @current: pointer to the right node for comparison
  * @temp: pointer to the left node for comparison
- * Description: Helper function to swap nodes of a list
  * Return: nothing
  */
 void helper_swap(listint_t *current, listint_t *temp)
