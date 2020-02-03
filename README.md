@@ -2,24 +2,24 @@
 The program codes contained in this repository is to help with learning and understanding sorting algorithms and Big-O in C programming.  
 
 # General #
-0. What are four different sorting algorithms?  
-a. Bubble sort also known as sinking sort iterates through an array or linked list to compare two elements at a time and swaps them if the proceeding element is greater than the next.  
+### 0. What are four different sorting algorithms?  
+>a. Bubble sort also known as sinking sort iterates through an array or linked list to compare two elements at a time and swaps them if the proceeding element is greater than the next.  
 
-b. Insertion sort assumes an array or linked list is in order, therefore, when it iterates and finds an element unordered, it swaps the greater element forward until it is in the correct order.  
+>b. Insertion sort assumes an array or linked list is in order, therefore, when it iterates and finds an element unordered, it swaps the greater element forward until it is in the correct order.  
 
-c. Selection sort compares and swap each element one at a time where an element would be compared to all the elements in an array or linked list.  When it finds an element smaller than itself, the smaller element would proceed with the comparsing and swapping.  
+>c. Selection sort compares and swap each element one at a time where an element would be compared to all the elements in an array or linked list.  When it finds an element smaller than itself, the smaller element would proceed with the comparsing and swapping.  
 
-d. Quick sort also known as partition-exchange sort implements a "divide-and-conquer" approach.  It takes an element, usually the last element and marks it as a "pivot" for partitioning the array or linked list.  The elements before the pivot should be smaller and the ones after it should be greater.  Then, it would recursively partition the array or linked list until it is in the correct order.  
+>d. Quick sort also known as partition-exchange sort implements a "divide-and-conquer" approach.  It takes an element, usually the last element and marks it as a "pivot" for partitioning the array or linked list.  The elements before the pivot should be smaller and the ones after it should be greater.  Then, it would recursively partition the array or linked list until it is in the correct order.  
 
-1. What is the Big O notation, and how to evaluate the time complexity of an algorithm?  
+### 1. What is the Big O notation, and how to evaluate the time complexity of an algorithm?  
 The Big O notation represents the time complexity of an algorithm while dismissing all constants.  When determining the time complexity of an algorithm, the two main factors to consider are the size of the input data and the number of operations needed to efficiently organize it.  The chart below shows the time complexity of the most frequently used sorting algorithms.  
 
 ![BigO](https://i.imgur.com/9tql5Cs.png)  
 
-2. How to select the best sorting algorithm for a given input?  
+### 2. How to select the best sorting algorithm for a given input?  
 The top three criteria in selecting a sorting algorithm are runtime, memory requirements and stability.  
 
-3. What is a stable sorting algorithm?  
+### 3. What is a stable sorting algorithm?  
 A sorting algorithm is considered stable if two elements are in the same order after being sorted.  By nature, insertion sort, merge sort and bubble sort are stable.  
 
 # Resources #
