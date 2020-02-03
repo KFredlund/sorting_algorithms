@@ -1,8 +1,8 @@
 #include "sort.h"
 #include <stdio.h>
 void swap(int *a, int *b);
-void quick_sort_helper(int array[], int l, int r);
-int partition(int array[], int l, int r);
+void quick_sort_helper(int array[], int l, int r, size_t size);
+int partition(int array[], int l, int r, size_t size);
 /**
 * quick_sort - A function that sorts an array of ints in
 * ascending order
@@ -13,7 +13,9 @@ int partition(int array[], int l, int r);
 */
 void quick_sort(int *array, size_t size)
 {
-	quick_sort_helper(array, 1, size);
+	size_t r = size - 1;
+
+	quick_sort_helper(array, 0, r, size);
 }
 /**
 * swap - function that swaps two values
@@ -33,46 +35,53 @@ void swap(int *a, int *b)
 * partition - function that partitions the array
 * @array: array to be partitioned
 * @r: right side
-* @l: left side 
+* @l: left side
+* @size: size of array
 *
 * Return: partioned array
 */
-int partition(int array[], int l, int r)
+int partition(int array[], int l, int r, size_t size)
 {
-	int i = l - 1;
+	int i = l;
 	int j;
 	int V = array[r];
 
-	for (j = l; j <= r - 1; j++)
+	for (j = l; j < r; j++)
 	{
 		if (array[j] <= V)
 		{
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
 			i++;
-			swap(&array[i], &array[j]);
-			print_array(array, 10);
 		}
 	}
-	swap(&array[i], &array[r]);
-	printf("B. OUTSIDE SWAP\n");
-	print_array(array, 10);
-	return (i + 1);
+	if (i != j)
+	{
+		swap(&array[i], &array[j]);/* Set the pivot */
+		print_array(array, size);
+	}
+	return (i);
 }
 /**
 * quick_sort_helper - function that helps quick and indexes the partition
 * @array: partioned array
 * @l: left side
 * @r: right side
+* @size: size of array
 *
 * Return: Never
 */
-void quick_sort_helper(int array[], int l, int r)
+void quick_sort_helper(int array[], int l, int r, size_t size)
 {
-	int V;
+	int mid;
 
 	if (l < r)
 	{
-		V = partition(array, l, r);
-		quick_sort_helper(array, l, V - 1);
-		quick_sort_helper(array, V + 1, r);
+		mid = partition(array, l, r, size);
+		quick_sort_helper(array, l, mid - 1, size);
+		quick_sort_helper(array, mid + 1, r, size);
 	}
 }
