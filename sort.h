@@ -33,5 +33,8 @@ void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 void helper_swap(listint_t *current, listint_t *temp);
+void swap(int *a, int *b);
+void quick_sort_helper(int array[], int l, int r, size_t size);
+int partition(int array[], int l, int r, size_t size);
 
 #endif /* SORT_H */
