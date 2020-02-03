@@ -54,5 +54,5 @@ https://www.bigocheatsheet.com
 http://web.mit.edu/1.124/LectureNotes/sorting.html  
 
 # Contributors #
-Kathleen Fredlund  
-Jennifer Tang  
+[Kati Fredlund](https://github.com/KFredlund)  
+[Jennifer Tang](https://github.com/jenntang1)  
