@@ -52,7 +52,9 @@ int partition(int array[], int l, int r)
 			print_array(array, 10);
 		}
 	}
-	swap(&array[i + 1], &array[r]);
+	swap(&array[i], &array[r]);
+	printf("B. OUTSIDE SWAP\n");
+	print_array(array, 10);
 	return (i + 1);
 }
 /**
