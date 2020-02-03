@@ -1,8 +1,4 @@
 #include "sort.h"
-#include <stdio.h>
-void swap(int *a, int *b);
-void quick_sort_helper(int array[], int l, int r, size_t size);
-int partition(int array[], int l, int r, size_t size);
 /**
 * quick_sort - A function that sorts an array of ints in
 * ascending order
