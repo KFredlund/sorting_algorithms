@@ -11,7 +11,10 @@ void quick_sort_hoare(int *array, size_t size)
 {
 	size_t r = size - 1;
 
-	quick_sort_helper(array, 0, r, size);
+	if (array != NULL && size >= 2)
+	{
+		quick_sort_helper(array, 0, r, size);
+	}
 }
 /**
 * swap - function that swaps two values
@@ -40,7 +43,7 @@ int partition(int array[], int l, int r, size_t size)
 {
 	int i = l - 1;
 	int j = r + 1;
-	int V = array[(l + r) / 2];
+	int V = array[r];
 
 	while (1)
 	{
@@ -52,7 +55,7 @@ int partition(int array[], int l, int r, size_t size)
 		} while (array[j] > V);
 		if (i >= j)
 		{
-			return (j);
+			return (i);
 		}
 		swap(&array[i], &array[j]);
 		print_array(array, size);
@@ -74,7 +77,7 @@ void quick_sort_helper(int array[], int l, int r, size_t size)
 	if (l < r)
 	{
 		mid = partition(array, l, r, size);
-		quick_sort_helper(array, l, mid, size);
-		quick_sort_helper(array, mid + 1, r, size);
+		quick_sort_helper(array, l, mid - 1, size);
+		quick_sort_helper(array, mid, r, size);
 	}
 }
